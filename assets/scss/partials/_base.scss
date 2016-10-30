@@ -1,0 +1,26 @@
+
+@import '../modules/variables'
+			, '../modules/mixins'
+			, '../modules/modules';
+
+
+@if ( $boxSizing ) {
+
+	* {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+}
+
+
+// --- Global CSS Selectors
+
+.group {
+  @extend %clearfix;
+}
+
+.visually-hidden {
+  @extend %visuallyhidden;
+}

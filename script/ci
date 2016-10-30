@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+RESULT=0
+
+curl -sS https://getcomposer.org/installer | php
+php composer.phar install
+
+if [ "$RESULT" = "0" ]; then
+    cosmos-build --components=silex-hello-world
+fi

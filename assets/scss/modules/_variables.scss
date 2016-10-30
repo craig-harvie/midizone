@@ -1,0 +1,72 @@
+
+
+// --- Sass variables --- */
+
+
+//
+//  Use Box Sizing?
+//
+//  Padding is not added to width of elements, so you can set div etc to the size you want
+//
+$boxSizing: true;
+
+
+
+// --- Font --- */
+
+$baseFont: Arial, sans-serif;
+$baseFontSize: 1.6;
+
+// --- Title Font is used in mixin title --- */
+$titleFont: 'PT Sans', Arial, sans-serif;
+
+
+
+// --- Colors --- */
+
+$black: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+$links: rgb(69, 103, 188);
+$orange: rgb(249, 146, 14);
+$red: red;
+
+
+
+// --- Radius
+
+$baseRadius: 5px;
+
+
+// --- Grid --- */
+$grid-width: 8.3333333%;
+
+
+
+// --- Semantic named breakpoints --- */
+
+$tiny: 320px;
+$small: 480px;
+$med: 768px;
+$large: 992px;
+$xl: 1366px;
+
+
+/* --- Colours --- */
+
+
+$lgreen: #D6F8D6;
+$green: #7FC6A4;
+$navy: #5D737E;
+$grey: #55505C;
+$yellow: #FAF33E;
+
+// colors
+$white: #fff;
+$dark-grey: #444;
+$light-grey: #ccc;
+$blue: #92b1d6;
+
+// body variables
+$body-color: $blue;
+$body-text-color: #444;
+$base-font-family: 'Source Sans Pro', sans-serif;
