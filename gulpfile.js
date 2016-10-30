@@ -31,6 +31,27 @@ gulp.task('sass', [ 'clean:css' ], function() {
 		.pipe( gulp.dest('web/a/css/') );
 });
 
+gulp.task('sassfontawesome', [ 'clean:css' ], function() {
+
+	gulp
+		.src('assets/scss/partials/font-awesome/fonts/*')
+		.pipe( gulp.dest('web/a/fonts') );
+
+	return sass('assets/scss/font-awesome.scss')
+		.pipe( autoprefixer( {
+			browsers: ['last 2 version']
+		} ) )
+		.on('error', sass.logError)
+		.pipe( rename( { basename: 'font-awesome' } ) )
+		.pipe( gulp.dest('web/a/css/') );
+});
+
+gulp.task('font-awesome-fonts', () => {
+
+	
+
+})
+
 gulp.task('nanocss', [ 'sass' ], function() {
 	gulp.src('web/a/css/main.css')
 		.pipe( nano() )
@@ -39,7 +60,7 @@ gulp.task('nanocss', [ 'sass' ], function() {
 
 gulp.task('css', [  ], function() {
 	livereload.listen();
-	gulp.watch( 'assets/scss/**/*.scss', [ 'sass' ] );
+	gulp.watch( 'assets/scss/**/*.scss', [ 'sass', 'sassfontawesome' ] );
 });
 
 

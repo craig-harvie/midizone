@@ -1,7 +1,28 @@
 body {
 	background: $body-color;
 	color: $body-text-color;
-	text-align: center;
+	padding-bottom: 345px;
+	padding-top: 40px;
+	font-family: 'Open Sans', sans-serif;
+
+	&.control-hide {
+
+		padding-bottom: 40px;
+
+		.piano-wrapper {
+
+			bottom: -304px;
+
+			.piano-control--open {
+				display: inline;
+			}
+			.piano-control--close {
+				display: none;
+			}
+
+		}
+	}
+
 }
 
 .group:after {
@@ -15,22 +36,10 @@ body {
 * html .group             { zoom: 1; } /* IE6 */
 *:first-child+html .group { zoom: 1; } /* IE7 */
 
-a {
-	text-decoration: none;
-	display: inline-block;
-	font-family: Handlee, cursive;
-	font-size: 3em;
-	color: $white;
-	transform: translate(-50%, -50%);
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	padding-bottom: 0.5em;
-	border-bottom: 5px solid $white;
-	transition: all ease-in-out 200ms;
-	&:hover {
-		color: darken( $blue, 10% );
-		border-bottom: 5px solid darken( $blue, 10% );
-	}
+h1, h2, h3, h4, h5 {
+	font-family: 'Jura', cursive;
+}
+
+main {
+	padding: 1em;
 }

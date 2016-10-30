@@ -2,15 +2,19 @@
 <html>
     <head>
         {% block head %}
+            <link rel="stylesheet" href="/a/css/font-awesome.css" />
             <link rel="stylesheet" href="/a/css/main.css" />
-            <title>Hello Silex World</title>
+            <title>MIDI Zone</title>
         {% endblock %}
     </head>
-    <body>
+    <body class="control-hide">
+
+        {% include 'common/header.html.twig' %}
+
         <main>
             {% block content %}{% endblock %}
         </main>
     </body>
-    <script type="text/javascript" src="/a/js/commons.js" />
-    <script type="text/javascript" src="/a/js/home.js" />
+    <script type="text/javascript" src="/a/js/commons.js"></script>
+    <script type="text/javascript" src="/a/js/home.js"></script>
 </html>
