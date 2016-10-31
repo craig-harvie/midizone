@@ -48,9 +48,14 @@ gulp.task('sassfontawesome', [ 'clean:css' ], function() {
 
 gulp.task('font-awesome-fonts', () => {
 
-	
 
 })
+
+gulp.task('svg', function() {
+	return gulp
+		.src('assets/svg/**/*')
+		.pipe( gulp.dest('web/a/svg') );
+});
 
 gulp.task('nanocss', [ 'sass' ], function() {
 	gulp.src('web/a/css/main.css')
@@ -86,7 +91,7 @@ gulp.task('js', [ 'webpack' ], function() {
 	gulp.watch( [ 'assets/js/**/*' ], [ 'webpack' ] );
 });
 
-gulp.task( 'dev', [ 'css', 'js' ] );
+gulp.task( 'dev', [ 'css', 'svg', 'js' ] );
 
 gulp.task( 'deploy', [ 'nanocss', 'uglifyjs', 'svg', 'images' ] );
 
