@@ -1,10 +1,10 @@
-import BufferLoader from 'modules/audio/BufferLoader';
-import AudioSource from 'modules/audio/AudioSource';
+import BufferLoader from '../../modules/audio/BufferLoader';
+import AudioSource from '../../modules/audio/AudioSource';
 
 export default class AudioManager {
 
 
-	constructor( _beats ) {
+	constructor( _beats, _loadedCb ) {
 
 		this.sources = {};
 		this.buffers = {};
@@ -13,9 +13,11 @@ export default class AudioManager {
 			bufferList: _beats,
 			bufferLoader: null
 		};
+		this.loadedCb = _loadedCb || function() {};
 
 		this.setup();
 
+		return this;
 	}
 
 
@@ -29,8 +31,7 @@ export default class AudioManager {
 		}
 
 		this.VARIABLES.bufferLoader = new BufferLoader( this, this.VARIABLES.context, this.VARIABLES.bufferList, () => {
-			$( '.beat-loader' ).addClass( 'hide' );
-			$( '.j_loop' ).removeAttr( 'disabled' );
+			if ( typeof this.loadedCb === 'function' ) this.loadedCb();
 		} );
 		this.VARIABLES.bufferLoader.loadAll();
 
@@ -63,7 +64,7 @@ export default class AudioManager {
 
 	playSound( _id, _loop ) {
 		try {
-			this.sources[ _id ].sourceNode.loop = _loop;
+			this.sources[ _id ].sourceNode.loop = false;
 			this.sources[ _id ].sourceNode.start( 0 );
 		} catch ( e ) {
 			let source = new AudioSource( _id, this.buffers[ _id ], this.VARIABLES.context );
