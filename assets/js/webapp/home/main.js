@@ -1,7 +1,7 @@
-import PianoControls from '../../modules/piano/PianoControls';
+import Piano from '../../modules/piano/Piano';
 
 $( () => {
 
-	new PianoControls();
+	new Piano();
 
 } );

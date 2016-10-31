@@ -2,7 +2,6 @@ import ajax from './global/ajax';
 
 const bindings = () => {
 
-	alert("hello");
 
 };
 

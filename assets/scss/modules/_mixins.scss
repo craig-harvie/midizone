@@ -14,7 +14,7 @@
 
 
 // --- Border radius --- */
-@mixin borderRadius( $radius: $baseRadius ) {
+@mixin rounded( $radius: $baseRadius ) {
 	-webkit-border-radius: $radius;
 		 -moz-border-radius: $radius;
 					border-radius: $radius;
