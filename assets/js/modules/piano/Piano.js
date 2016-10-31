@@ -15,9 +15,25 @@ export default class Piano {
 		this.allowedKeys = 'abcdefghijklmnopqrstuvwxyz0123456789';
 		this.usedKeys = [];
 
-		var sounds = [
-			{ id: 'c-2', url: '/notes/1.+C-2.wav' }
-		];
+		var sounds = {};
+
+		$( '[data-note]' ).each( ( index, item ) => {
+
+			let $el = $( item );
+
+			sounds[ $el.data( 'note' ) ] = {
+				id: $el.data( 'note' ),
+				url: `/notes/${$el.data( 'note' )}.wav`
+			};
+
+			this.keyListener.simple_combo( $el.find( 'i' ).text().toLowerCase(), ( e ) => {
+				$el.trigger( 'click' );
+				// this.audioManager.playSound( $el.data( 'note' ), this.audioManager.getBufferLoader().bufferList[ $el.data( 'note' ) ], this.audioManager.getContext().currentTime, true );
+			} );
+
+			// this.audioManager.playSound( note, this.audioManager.getBufferLoader().bufferList[ note ], this.audioManager.getContext().currentTime, true );
+
+		} );
 
 		this.audioManager = new AudioManager( sounds, this.doneLoading.bind( this ) );
 
@@ -54,7 +70,7 @@ export default class Piano {
 
 	bind() {
 
-		this.keyListener.simple_combo( 'shift s', ( e ) => {
+		this.keyListener.simple_combo( 's', ( e ) => {
 			console.log( keycode( e ) );
 			console.log( 'You pressed shift and s' );
 		} );
@@ -72,9 +88,10 @@ export default class Piano {
 		$( '.j-key' ).on( 'click', ( e ) => {
 			e.preventDefault();
 			let $el = $( e.currentTarget );
+			let note = $el.data( 'note' );
 			$el.toggleClass( 'active' );
 			$el.closest( '.key' ).toggleClass( 'active' );
-			this.audioManager.playSound( 0, this.audioManager.getBufferLoader().bufferList[ 0 ], this.audioManager.getContext().currentTime, true );
+			this.audioManager.playSound( note, this.audioManager.getBufferLoader().bufferList[ note ], this.audioManager.getContext().currentTime, true );
 			DelayHandler.delay( () => {
 				$el.toggleClass( 'active' );
 				$el.closest( '.key' ).toggleClass( 'active' );
