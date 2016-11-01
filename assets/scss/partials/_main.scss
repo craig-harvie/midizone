@@ -25,6 +25,14 @@ body {
 
 }
 
+html, body, main {
+	height: 100%;
+}
+
+.hide {
+	display: none;
+}
+
 .group:after {
 	visibility: hidden;
 	display: block;
@@ -41,5 +49,5 @@ h1, h2, h3, h4, h5 {
 }
 
 main {
-	padding: 1em;
+	padding: 0.4em;
 }

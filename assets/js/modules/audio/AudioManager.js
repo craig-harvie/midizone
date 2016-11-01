@@ -64,12 +64,12 @@ export default class AudioManager {
 
 	playSound( _id, _loop ) {
 		try {
-			this.sources[ _id ].sourceNode.loop = false;
+			this.sources[ _id ].sourceNode.loop = _loop;
 			this.sources[ _id ].sourceNode.start( 0 );
 		} catch ( e ) {
 			let source = new AudioSource( _id, this.buffers[ _id ], this.VARIABLES.context );
 			this.addSource( _id, source );
-			this.playSound( _id );
+			this.playSound( _id, _loop );
 		}
 	}
 

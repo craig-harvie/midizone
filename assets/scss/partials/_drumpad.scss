@@ -1,0 +1,112 @@
+/*
+ * Flash animation
+*/
+@-webkit-keyframes flash {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes flash {
+    0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.drumpad {
+	width: 100%;
+    height: 100%;
+    background: darken( $pastel-grey, 10% );
+
+    ul {
+    	font-size: 0;
+    	height: inherit;
+    	padding: 4px;
+    	li {
+			height: 50%;
+			width: 50%;
+			display: inline-block;
+			font-size: 1em;
+			padding: 4px;
+
+			&:nth-child(5),
+			&:nth-child(6),
+			&:nth-child(7),
+			&:nth-child(8) {
+				display: none;
+			}
+
+    		a {
+    			position: relative;
+				background: $pastel-grey;
+				display: block;
+				margin: 0.3em;
+				width: 100%;
+				height: 100%;
+
+				&.active {
+					-webkit-animation-duration: 1s;
+					animation-duration: 1s;
+					-webkit-animation-fill-mode: both;
+					animation-fill-mode: both;
+					background-color: #8ACB88;
+					
+					-webkit-animation: flash 1s linear infinite;
+					  -moz-animation: flash 1s linear infinite;
+					  -ms-animation: flash 1s linear infinite;
+					  -o-animation: flash 1s linear infinite;
+					  animation: flash 1s linear infinite;
+
+				}
+
+				.key--load {
+					left: 2px;
+					margin-left: 0;
+					@include rounded(0);
+					bottom: 2px;
+				}
+    		}
+    	}
+    }
+
+    @media(min-width: 767px) {
+
+    	ul {
+	    	li {
+				height: 50%;
+				width: 25%;
+
+				&:nth-child(5),
+				&:nth-child(6),
+				&:nth-child(7),
+				&:nth-child(8) {
+					display: inline-block;
+				}
+	    	}
+	    }
+
+    }
+}

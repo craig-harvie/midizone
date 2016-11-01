@@ -1,7 +1,7 @@
-import Piano from '../../modules/piano/Piano';
+import Track from '../../modules/Track';
 
 $( () => {
 
-	new Piano();
+	new Track();
 
 } );
