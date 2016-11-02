@@ -1,0 +1,28 @@
+{
+	"drumpad": [
+		{ "pos": 0, "audio": "bass.mp3", "keyMapping": null },
+		{ "pos": 1, "audio": "clap.mp3", "keyMapping": null },
+		{ "pos": 2, "audio": "drum.mp3", "keyMapping": null },
+		{ "pos": 3, "audio": "drum2.mp3", "keyMapping": null },
+		{ "pos": 4, "audio": "drum3.mp3", "keyMapping": null },
+		{ "pos": 5, "audio": "snare.mp3", "keyMapping": null },
+		{ "pos": 6, "audio": "synth.mp3", "keyMapping": null },
+		{ "pos": 7, "audio": "tropical.mp3", "keyMapping": null }
+	],
+	"piano": [
+		[ { "pos": 0, "audio": "1C.wav", "keyMapping": null, "keyColour": "white" }, { "pos": 1, "audio": "1Cs.wav", "keyMapping": null, "keyColour": "black" } ],
+		[ { "pos": 2, "audio": "1D.wav", "keyMapping": null, "keyColour": "white" }, { "pos": 3, "audio": "1Ds.wav", "keyMapping": null, "keyColour": "black" } ],
+		[ { "pos": 4, "audio": "1E.wav", "keyMapping": null, "keyColour": "white" } ],
+		[ { "pos": 5, "audio": "1F.wav", "keyMapping": null, "keyColour": "white" }, { "pos": 6, "audio": "1Fs.wav", "keyMapping": null, "keyColour": "black" } ],
+		[ { "pos": 7, "audio": "1G.wav", "keyMapping": null, "keyColour": "white" }, { "pos": 8, "audio": "1Gs.wav", "keyMapping": null, "keyColour": "black" } ],
+		[ { "pos": 9, "audio": "1A.wav", "keyMapping": null, "keyColour": "white" }, { "pos": 10, "audio": "1As.wav", "keyMapping": null, "keyColour": "black" } ],
+		[ { "pos": 11, "audio": "1B.wav", "keyMapping": null, "keyColour": "white" } ],
+		[ { "pos": 12, "audio": "2C.wav", "keyMapping": null, "keyColour": "white" }, { "pos": 13, "audio": "2Cs.wav", "keyMapping": null, "keyColour": "black" } ],
+		[ { "pos": 14, "audio": "2D.wav", "keyMapping": null, "keyColour": "white" }, { "pos": 15, "audio": "2Ds.wav", "keyMapping": null, "keyColour": "black" } ],
+		[ { "pos": 16, "audio": "2E.wav", "keyMapping": null, "keyColour": "white" } ],
+		[ { "pos": 17, "audio": "2F.wav", "keyMapping": null, "keyColour": "white" }, { "pos": 18, "audio": "2Fs.wav", "keyMapping": null, "keyColour": "black" } ],
+		[ { "pos": 19, "audio": "2G.wav", "keyMapping": null, "keyColour": "white" }, { "pos": 20, "audio": "2Gs.wav", "keyMapping": null, "keyColour": "black" } ],
+		[ { "pos": 21, "audio": "2A.wav", "keyMapping": null, "keyColour": "white" }, { "pos": 22, "audio": "2As.wav", "keyMapping": null, "keyColour": "black" } ],
+		[ { "pos": 23, "audio": "2B.wav", "keyMapping": null, "keyColour": "white" } ]
+	]
+}

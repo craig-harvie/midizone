@@ -33,7 +33,7 @@ export default class Track {
 
 			sounds[ $el.data( 'note' ) ] = {
 				id: $el.data( 'note' ),
-				url: `/notes/${$el.data( 'note' )}.wav`
+				url: `/notes/${$el.data( 'note' )}`
 			};
 
 			this.keyListener.simple_combo( $el.find( 'i' ).text().toLowerCase(), ( e ) => {
@@ -48,7 +48,7 @@ export default class Track {
 
 			sounds[ $el.data( 'loop' ) ] = {
 				id: $el.data( 'loop' ),
-				url: `/loops/${$el.data( 'loop' )}.mp3`
+				url: `/loops/${$el.data( 'loop' )}`
 			};
 
 			this.keyListener.simple_combo( $el.find( 'i' ).text().toLowerCase(), ( e ) => {

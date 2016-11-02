@@ -1,26 +1,18 @@
 <div class="drumpad">
 
-	{% set loops = [
-		'bass',
-		'clap',
-		'drum',
-		'drum2',
-		'drum3',
-		'snare',
-		'synth',
-		'tropical'
-	] %}
-
 	<ul>
-		{% for l in loops %}
-		 	<li>
-		 		<a href="" class="j-drumpad" data-loop={{ l }}>
-		 			<span class="key--load j-key-load">
-						{# <i class="fa fa-question" aria-hidden="true"></i> #}
-						<i>{{ loop.index }}</i>
+		{% for drum in drumpadOptions %}
+			<li>
+				<a href="" class="j-drumpad" data-loop={{ drum['audio'] }}>
+					<span class="key--load j-key-load">
+						{% if drum['keyMapping'] == null %}
+							<i class="fa fa-question" aria-hidden="true"></i>
+						{% else %}
+							<i>{{ drum['keyMapping'] }}</i>
+						{% endif %}
 					</span>
-		 		</a>
-		 	</li>
+				</a>
+			</li>
 		{% endfor %}
 	</ul>
 

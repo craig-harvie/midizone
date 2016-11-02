@@ -2,10 +2,10 @@
 
 {% block content %}
 
-{% include 'drum-pad/drumpad.html.twig' %}
+{% include 'drum-pad/drumpad.html.twig' with {'drumpadOptions':options['drumpad']} %}
 
 {% include 'piano/keychooser.html.twig' %}
 
-{% include 'piano/piano.html.twig' %}
+{% include 'piano/piano.html.twig' with {'pianoOptions':options['piano']} %}
 	
 {% endblock %}
